@@ -1,0 +1,8 @@
+body {
+  padding: 25px;
+}
+
+button.switch {
+  border: solid 2px rgb(0, 0, 0);
+  background-color: white;
+}
