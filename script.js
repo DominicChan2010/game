@@ -25,7 +25,12 @@ let r_t = [
     title: ["There's a lot of stuff here."]
   }
 ];
-var entities = [for (var i of r_t) [for (var j of i.things)]];
+var entities = [];
+for (let i of r_t) {
+  for (let j of i.things) {
+    entities.push(j);
+  }
+}
 console.log(`Entities: ${entities}`);
 var look = "";
 var curr_r = 0;
