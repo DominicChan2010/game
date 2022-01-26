@@ -25,6 +25,8 @@ let r_t = [
     title: ["There's a lot of stuff here."]
   }
 ];
+var entities = [for (var i of r_t) [for (var j of i.things)]];
+console.log(`Entities: ${entities}`);
 var look = "";
 var curr_r = 0;
 
