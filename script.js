@@ -17,7 +17,7 @@ var curr_r = 0;
 for (let i in rooms) {
   rooms[i].addEventListener("click", function() {
     curr_r = i;
-    
+    look = "";
     for (let j of r_t[curr_r]) {
       look = look + `<button id="${j}">${j}</button>`;
     }
