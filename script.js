@@ -11,23 +11,28 @@ inv.innerHTML = [];
 let r_t = [
   {
     things: ["bed"],
-    title: ["Not the time to sleep."]
+    title: ["Not the time to sleep."],
+    does: []
   },
   {
     things: ["toilet", "sink", "bathtub"],
-    title: ["Ugh, disgusting. It has some... stool in it.", "A normal sink.", "There's a watermelon inside? How?"]
+    title: ["Ugh, disgusting. It has some... stool in it.", "A normal sink.", "There's a watermelon inside? How?"],
+    does: []
   },
   {
     things: ["TV", "armchair", "front door"],
-    title: ["You can throw the TV if you want.", "Nice, comfortable. But you should escape from the house, not watch the telly.", "You get out from here."]
+    title: ["You can throw the TV if you want.", "Nice, comfortable. But you should escape from the house, not watch the telly.", "You get out from here."],
+    does: []
   },
   {
     things: ["table", "note", "window"],
-    title: ["If you smash it hard enough, it breaks! Easy.", "A note? Since when?", "It's night outside, but it's still not an excuse to sleep."]
+    title: ["If you smash it hard enough, it breaks! Easy.", "A note? Since when?", "It's night outside, but it's still not an excuse to sleep."],
+    does: []
   },
   {
     things: ["rummage"],
-    title: ["There's a lot of stuff here."]
+    title: ["There's a lot of stuff here."],
+    does: []
   }
 ];
 // note: front door has one lock, and is very strong. You will need two things. Also you can throw the poop from the toilet at the window. When you do that, it just goes *splat* and falls to the floor. Wash your hands after that! XD
