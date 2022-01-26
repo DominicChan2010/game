@@ -21,5 +21,6 @@ for (let i in rooms) {
     for (let j of r_t[curr_r]) {
       look = look + `<button id="${j}">${j}</button>`;
     }
+    content.innerHTML = look;
   })
 }
