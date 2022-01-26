@@ -28,6 +28,7 @@ let r_t = [
 var look = "";
 var curr_r = 0;
 
+look = look + `<button id="${r_t[0].things[0]}" title="${r_t[0].title[0]}">${r_t[curr_r].things[0]}</button>`;
 
 for (let i in rooms) {
   rooms[i].addEventListener("click", function() {
