@@ -3,7 +3,7 @@ My first GitHub HTML-CSS-JS project for so long.
 **/
 
 const rooms = document.querySelectorAll("button.switch");
-const inv = [document.querySelector("div#inv"), document.querySelector("div#inv").split(",")];
+const inv = [document.querySelector("div#inv"), document.querySelector("div#inv").innerHTML.split(",")];
 const content = document.querySelector("div#in");
 
 // room content
@@ -64,6 +64,8 @@ r_t[2].does[0] = function() {
   alert("You threw the TV on the floor, and an axe and a key was inside! You took it.")
   inv[0].innerHTML.push(items[2]);
   inv[0].innerHTML.push(items[0]);
+  look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
+  content.innerHTML = look;
 };
 r_t[2].does[1] = function() {
   alert("So soft, so comfortable. It feels like you're in heaven, floating on a cloud.");
