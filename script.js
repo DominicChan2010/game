@@ -82,7 +82,7 @@ for (let i in rooms) {
     curr_r = i;
     look = "";
     for (let j in r_t[curr_r].things) {
-      console.log(j);
+      look = look + `<button title="${r_t[curr_r].title[j]}" onclick="${r_t[curr_r].does[j]}()">${r_t[curr_r].things[j]}</button>`
     }
     content.innerHTML = look;
   })
