@@ -70,7 +70,7 @@ r_t[2].does[1] = function() {
   alert("So soft, so comfortable. It feels like you're in heaven, floating on a cloud.");
 };
 r_t[2].does[2] = function() {
-  if (inv.indexOf("key") > -1 && inv.indexOf("axe") > -1 && inv.indexOf("sledgehammer")) {
+  if (inv.indexOf("key") > -1 && inv.indexOf("axe") > -1 && inv.indexOf("sledgehammer") > -1) {
     alert("You escaped!");
     close();
   }
