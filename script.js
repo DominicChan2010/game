@@ -47,7 +47,7 @@ r_t[0].does[0] = function() {
 };
 r_t[1].does[0] = function() {
   alert("You got some stool from the toilet! Disgusting.");
-  inv[0].innerHTML = inv[0].innerHTML + `${items[3]}, `);
+  inv[0].innerHTML = inv[0].innerHTML + `${items[3]}, `;
 };
 r_t[1].does[1] = function() {
   if (did_the_deed == false) {
