@@ -81,7 +81,7 @@ for (let i in rooms) {
   rooms[i].addEventListener("click", function() {
     curr_r = i;
     look = "";
-    for (let j in r_t[curr_r]) {
+    for (let j in r_t[curr_r].things) {
       console.log(j);
     }
     content.innerHTML = look;
