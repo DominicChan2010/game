@@ -81,8 +81,10 @@ for (let i in rooms) {
   rooms[i].addEventListener("click", function() {
     curr_r = i;
     look = "";
-    for (let j in r_t[curr_r].things) {
-      look = look + `<button id="${r_t[curr_r].things[j]}" title="${r_t[curr_r].title[j]}" onclick="r_t[${curr_r}].does[${j}]">${r_t[curr_r].things[j]}</button>`;
+    for (let j of r_t[curr_r]) {
+      for (let k in j.things) {
+        look = look + `<button id="${j.things[k]}" title="${j.title[k]}" onclick="${j.does[k]}">${r_t[curr_r].things[j]}</button>`;
+      }
     }
     content.innerHTML = look;
   })
