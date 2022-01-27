@@ -58,12 +58,12 @@ r_t[1].does[1] = function() {
 };
 r_t[1].does[2] = function() {
   alert("You got a watermelon! Wonder what's it for...");
-  inv[0].innerHTML = inv[0].innerHTML + `${items[4]}, `);
+  inv[0].innerHTML = inv[0].innerHTML + `${items[4]}, `;
 };
 r_t[2].does[0] = function() {
   alert("You threw the TV on the floor, and an axe and a key was inside! You took it.")
-  inv[0].innerHTML = inv[0].innerHTML + `${items[3]}, `);
-  inv[0].innerHTML = inv[0].innerHTML + `${items[0]}, `);
+  inv[0].innerHTML = inv[0].innerHTML + `${items[3]}, `;
+  inv[0].innerHTML = inv[0].innerHTML + `${items[0]}, `;
   look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
   content.innerHTML = look;
 };
