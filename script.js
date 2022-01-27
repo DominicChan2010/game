@@ -3,9 +3,8 @@ My first GitHub HTML-CSS-JS project for so long.
 **/
 
 const rooms = document.querySelectorAll("button.switch");
-const inv = document.querySelector("div#inv");
+const inv = [document.querySelector("div#inv"), document.querySelector("div#inv").split(",")];
 const content = document.querySelector("div#in");
-inv.innerHTML = [];
 
 // room content
 let r_t = [
@@ -48,36 +47,45 @@ r_t[0].does[0] = function() {
 };
 r_t[1].does[0] = function() {
   alert("You got some stool from the toilet! Disgusting.");
-  inv.innerHTML.push(items[3]);
+  inv[0].innerHTML.push(items[3]);
 };
 r_t[1].does[1] = function() {
   if (did_the_deed == false) {
-    alert("No need to wash your hands and brush your teeth.")
+    alert("No need to wash your hands and brush your teeth.");
   } else {
-    alert("You did the deed! Deed: Throw stool at the window, then wash your hands and leave the water running.")
+    alert("You did the deed! Deed: Throw stool at the window, then wash your hands and leave the water running.");
   }
 };
 r_t[1].does[2] = function() {
   alert("You got a watermelon! Wonder what's it for...");
-  inv.innerHTML.push(items[4]);
+  inv[0].innerHTML = inv[0].innerHTML + `${items[4]},`;
 };
 r_t[2].does[0] = function() {
   alert("You threw the TV on the floor, and an axe and a key was inside! You took it.")
-  inv.innerHTML.push(items[2]);
-  inv.innerHTML.push(items[0]);
+  inv[0].innerHTML.push(items[2]);
+  inv[0].innerHTML.push(items[0]);
 };
 r_t[2].does[1] = function() {
   alert("So soft, so comfortable. It feels like you're in heaven, floating on a cloud.");
 };
 r_t[2].does[2] = function() {
-  if (inv.indexOf("key") > -1 && inv.indexOf("axe") > -1 && inv.indexOf("sledgehammer") > -1) {
+  if (inv[1].indexOf("key") > -1 && inv[1].indexOf("axe") > -1 && inv[1].indexOf("sledgehammer") > -1) {
     alert("You escaped!");
     close();
   }
-}
+};
+r_t[3].does[0] = function() {
+  if (inv[1].indexOf("sledgehammer") > -1) {
+    alert("You slammed the hammer into the table, causing it to break, and fall as 4 pieces. The note falls to the ground.");
+    r_t[0].splice(0, 1);
+    look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
+    content.innerHTML = look;
+  }
+};
 
 for (let i in rooms) {
   // chrome console, you're the worst. rooms[i].addEventListener IS A FUNCTION, and yet you say it is not. *facepalm*.
+  // at least that thing tells me whether my stuff is working, or there is a major error.
   rooms[i].addEventListener("click", function() {
     curr_r = i;
     look = "";
