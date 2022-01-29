@@ -64,9 +64,9 @@ r_t[2].does[0] = function() {
   alert("You threw the TV on the floor, and an axe and a key was inside! You took it.")
   inv.innerHTML = inv.innerHTML + `${items[2]}, `;
   inv.innerHTML = inv.innerHTML + `${items[0]}, `;
-  r_t[2].splice(0, 1);
   look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
   content.innerHTML = look;
+  r_t[2].splice(0, 1);
 };
 r_t[2].does[1] = function() {
   alert("So soft, so comfortable. It feels like you're in heaven, floating on a cloud.");
@@ -80,11 +80,17 @@ r_t[2].does[2] = function() {
 r_t[3].does[0] = function() {
   if (inv.innerHTML.split(", ").indexOf("sledgehammer") > -1) {
     alert("You slammed the hammer into the table, causing it to break, and fall as 4 pieces. The note falls to the ground.");
-    r_t[0].splice(0, 1);
     look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
     content.innerHTML = look;
+    r_t[3].splice(0, 1);
   }
 };
+r_t[3].does[1] = function() {
+  alert("The note says,\n'Look in the storeroom.'")
+};
+r_t[3].does[2] = function() {
+  alert("You look outside. It's the dead of night, and suddenly, a UFO passes by.")
+}
 
 for (let i in rooms) {
   // chrome console, you're the worst. rooms[i].addEventListener IS A FUNCTION, and yet you say it is not. *facepalm*.
