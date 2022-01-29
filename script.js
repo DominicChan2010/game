@@ -64,7 +64,7 @@ r_t[2].does[0] = function() {
   alert("You threw the TV on the floor, and an axe and a key was inside! You took it.")
   inv.innerHTML = inv.innerHTML + `${items[2]}, `;
   inv.innerHTML = inv.innerHTML + `${items[0]}, `;
-  look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
+  look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`, "");
   content.innerHTML = look;
   r_t[2].things.splice(0, 1);
   r_t[2].title.splice(0, 1);
@@ -82,7 +82,7 @@ r_t[2].does[2] = function() {
 r_t[3].does[0] = function() {
   if (inv.innerHTML.split(", ").indexOf("sledgehammer") > -1) {
     alert("You slammed the hammer into the table, causing it to break, and fall as 4 pieces. The note falls to the ground.");
-    look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
+    look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`, "");
     content.innerHTML = look;
     r_t[3].splice(0, 1);
   }
@@ -93,6 +93,18 @@ r_t[3].does[1] = function() {
 r_t[3].does[2] = function() {
   alert("You look outside. It's the dead of night, and suddenly, a UFO passes by.")
 }
+r_t[4].does[0] = function() {
+  if (Math.random() < 0.1) {
+    alert("You got the sledgehammer!");
+    inv.innerHTML = inv.innerHTML + `${items[1]}`;
+    look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`, "");
+    r_t[4].things.splice(0, 1);
+    r_t[4].title.splice(0, 1);
+    r_t[4].does.splice(0, 1);
+  } else {
+    alert("You got some junk! You threw it into the slew of mess.");
+  }
+};
 
 for (let i in rooms) {
   // chrome console, you're the worst. rooms[i].addEventListener IS A FUNCTION, and yet you say it is not. *facepalm*.
