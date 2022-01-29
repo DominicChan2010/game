@@ -66,7 +66,9 @@ r_t[2].does[0] = function() {
   inv.innerHTML = inv.innerHTML + `${items[0]}, `;
   look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`);
   content.innerHTML = look;
-  r_t[2].splice(0, 1);
+  r_t[2].things.splice(0, 1);
+  r_t[2].title.splice(0, 1);
+  r_t[2].does.splice(0, 1);
 };
 r_t[2].does[1] = function() {
   alert("So soft, so comfortable. It feels like you're in heaven, floating on a cloud.");
