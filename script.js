@@ -86,7 +86,9 @@ r_t[3].does[0] = function() {
     alert("You slammed the hammer into the table, causing it to break, and fall as 4 pieces. The note falls to the ground.");
     look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`, "");
     content.innerHTML = look;
-    r_t[3].splice(0, 1);
+    r_t[3].things[0].splice(0, 1);
+    r_t[3].title[0].splice(0, 1);
+    r_t[3].does[0].splice(0, 1);
   }
 };
 r_t[3].does[1] = function() {
@@ -100,6 +102,7 @@ r_t[4].does[0] = function() {
     alert("You got the sledgehammer!");
     inv.innerHTML = inv.innerHTML + `${items[1]}`;
     look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`, "");
+    content.innerHTML = look;
     r_t[4].things.splice(0, 1);
     r_t[4].title.splice(0, 1);
     r_t[4].does.splice(0, 1);
