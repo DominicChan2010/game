@@ -76,7 +76,9 @@ r_t[2].does[1] = function() {
 r_t[2].does[2] = function() {
   if (inv.innerHTML.split(", ").indexOf("key") > -1 && inv.innerHTML.split(", ").indexOf("axe") > -1 && inv.innerHTML.split(", ").indexOf("sledgehammer") > -1) {
     alert("You escaped!");
-    close();
+
+    // HACK: workaround for window.close not working because of security feature
+    open(location, '_self').close();
   }
 };
 r_t[3].does[0] = function() {
