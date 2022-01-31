@@ -100,7 +100,7 @@ r_t[3].does[2] = function() {
 r_t[4].does[0] = function() {
   if (Math.random() < 0.1) {
     alert("You got the sledgehammer!");
-    inv.innerHTML = inv.innerHTML + `${items[1]}`;
+    inv.innerHTML = inv.innerHTML + `${items[1]}, `;
     look = look.replace(`<button title="${r_t[curr_r].title[0]}" onclick="r_t[${curr_r}].does[0]()">${r_t[curr_r].things[0]}</button>`, "");
     content.innerHTML = look;
     r_t[4].things.splice(0, 1);
